@@ -2047,92 +2047,69 @@ footer p{
 
 </footer>
 
-
-<!-- ============================================
-     HANNAH AGCAOILI
-     EDITORIAL PAPER GRAIN BACKGROUND
-============================================ -->
+<!-- MOVING BACKGROUND -->
 
 <style>
-
-.hannah-paper-grain {
-
+.hannah-moving-bg {
   position: fixed;
-
-  inset: -50%;
-
-  width: 200%;
-  height: 200%;
-
+  inset: 0;
+  overflow: hidden;
   pointer-events: none;
-
-  z-index: 9999;
-
-  opacity: 0.045;
-
-  background-image:
-    url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
-
-  animation:
-    hannahPaperMove 0.8s steps(2) infinite;
-
+  z-index: -1;
 }
 
+.hannah-moving-bg::before,
+.hannah-moving-bg::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  filter: blur(70px);
+}
 
-@keyframes hannahPaperMove {
+.hannah-moving-bg::before {
+  background: rgba(190, 160, 120, 0.18);
+  top: 15%;
+  left: -100px;
+  animation: floatHannah1 12s ease-in-out infinite;
+}
 
-  0% {
+.hannah-moving-bg::after {
+  background: rgba(220, 200, 175, 0.20);
+  right: -100px;
+  bottom: 15%;
+  animation: floatHannah2 15s ease-in-out infinite;
+}
+
+@keyframes floatHannah1 {
+  0%, 100% {
     transform: translate(0, 0);
   }
-
-  25% {
-    transform: translate(-2%, 1%);
-  }
-
   50% {
-    transform: translate(1%, -2%);
+    transform: translate(180px, 100px);
   }
-
-  75% {
-    transform: translate(2%, 1%);
-  }
-
-  100% {
-    transform: translate(0, 0);
-  }
-
 }
 
+@keyframes floatHannah2 {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-180px, -100px);
+  }
+}
 
 @media (max-width: 700px) {
-
-  .hannah-paper-grain {
-
-    opacity: 0.035;
-
-    animation-duration: 1.2s;
-
+  .hannah-moving-bg::before,
+  .hannah-moving-bg::after {
+    width: 200px;
+    height: 200px;
   }
-
 }
-
-
-@media (prefers-reduced-motion: reduce) {
-
-  .hannah-paper-grain {
-    animation: none;
-  }
-
-}
-
 </style>
 
-
-<div
-  class="hannah-paper-grain"
-  aria-hidden="true"
-></div>
-
+<div class="hannah-moving-bg"></div>
 
 </body>
 </html>
