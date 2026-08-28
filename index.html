@@ -4,23 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Hannah Agcaoili — Virtual Operations Partner providing executive assistance, compliance support, research, process improvement, and digital business support.">
-
 <title>Hannah Agcaoili | Virtual Operations Partner</title>
 
 <style>
+
 :root{
   --ink:#29251f;
   --muted:#746d62;
   --paper:#f7f3eb;
-  --cream:#eee6d7;
+  --cream:#e9e0d2;
   --card:#fffdf9;
-  --gold:#a78972;
-  --gold-dark:#896b56;
-  --line:#ded5c8;
-  --white:#ffffff;
-  --shadow:0 18px 50px rgba(55,44,32,.08);
-  --radius:22px;
+  --accent:#a9826f;
+  --accent-dark:#876552;
+  --line:#d9d0c3;
+  --white:#fff;
+  --shadow:0 18px 50px rgba(55,44,35,.09);
   --max:1180px;
 }
 
@@ -35,10 +33,15 @@ html{
 }
 
 body{
-  font-family:Arial, Helvetica, sans-serif;
-  color:var(--ink);
   background:var(--paper);
+  color:var(--ink);
+  font-family:Arial,Helvetica,sans-serif;
   line-height:1.7;
+}
+
+img{
+  display:block;
+  max-width:100%;
 }
 
 a{
@@ -46,173 +49,154 @@ a{
   text-decoration:none;
 }
 
-img{
-  max-width:100%;
-  display:block;
+button,
+input,
+select,
+textarea{
+  font:inherit;
 }
 
 .container{
-  width:min(var(--max), calc(100% - 48px));
+  width:min(calc(100% - 48px),var(--max));
   margin:auto;
 }
 
-/* ---------------- NAV ---------------- */
+
+/* =========================
+   NAVIGATION
+========================= */
 
 nav{
   position:sticky;
   top:0;
-  z-index:100;
-  background:rgba(247,243,235,.94);
+  z-index:1000;
+  background:rgba(247,243,235,.95);
   backdrop-filter:blur(14px);
   border-bottom:1px solid var(--line);
 }
 
 .nav-inner{
-  height:76px;
+  min-height:82px;
   display:flex;
   align-items:center;
   justify-content:space-between;
+  gap:25px;
 }
 
 .brand{
-  font-family:Georgia, "Times New Roman", serif;
-  font-size:27px;
+  font-family:Georgia,serif;
+  font-size:25px;
   font-weight:bold;
-  line-height:1;
+  letter-spacing:-1px;
 }
 
 .brand span{
-  color:var(--gold-dark);
+  color:var(--accent);
 }
 
 .brand small{
   display:block;
-  font-family:Arial, sans-serif;
-  font-size:9px;
-  letter-spacing:3px;
-  margin-top:7px;
-  color:var(--muted);
-  font-weight:500;
+  font-family:Arial,sans-serif;
+  font-size:8px;
+  letter-spacing:2.5px;
+  font-weight:normal;
+  margin-top:-3px;
 }
 
 .nav-links{
   display:flex;
-  gap:27px;
+  gap:22px;
   align-items:center;
   font-size:11px;
-  letter-spacing:1.2px;
   text-transform:uppercase;
-}
-
-.nav-links a{
-  transition:.2s;
+  letter-spacing:1px;
 }
 
 .nav-links a:hover{
-  color:var(--gold-dark);
+  color:var(--accent-dark);
 }
 
 .nav-cta{
-  background:var(--gold-dark);
+  background:var(--accent-dark);
   color:white;
-  padding:12px 20px;
-  border-radius:4px;
+  padding:13px 18px;
   font-size:10px;
   letter-spacing:1px;
   text-transform:uppercase;
 }
 
-/* ---------------- GENERAL ---------------- */
 
-section{
-  padding:105px 0;
-}
-
-.kicker{
-  font-size:11px;
-  letter-spacing:3px;
-  text-transform:uppercase;
-  color:var(--gold-dark);
-  margin-bottom:18px;
-}
-
-.section-title{
-  font-family:Georgia, "Times New Roman", serif;
-  font-size:clamp(40px,5vw,65px);
-  line-height:1.02;
-  font-weight:500;
-}
-
-.section-intro{
-  max-width:600px;
-  color:var(--muted);
-  margin-top:20px;
-}
-
-.center{
-  text-align:center;
-}
-
-/* ---------------- HERO ---------------- */
+/* =========================
+   HERO
+========================= */
 
 .hero{
-  padding:75px 0 80px;
+  padding:78px 0 65px;
 }
 
 .hero-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:75px;
+  gap:70px;
   align-items:center;
 }
 
+.eyebrow{
+  color:var(--accent-dark);
+  font-size:10px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  margin-bottom:20px;
+}
+
 .hero h1{
-  font-family:Georgia, "Times New Roman", serif;
-  font-size:clamp(50px,6vw,82px);
-  line-height:.96;
+  font-family:Georgia,serif;
   font-weight:500;
-  letter-spacing:-3px;
+  font-size:clamp(50px,6vw,78px);
+  line-height:.98;
+  letter-spacing:-4px;
   margin-bottom:25px;
 }
 
 .hero h1 span{
-  color:var(--gold);
+  color:var(--accent);
 }
 
-.hero-text{
-  max-width:570px;
+.hero-description{
   color:var(--muted);
+  max-width:620px;
   font-size:16px;
-  margin-bottom:30px;
+  line-height:1.8;
+  margin-bottom:28px;
 }
 
 .buttons{
   display:flex;
-  gap:12px;
   flex-wrap:wrap;
+  gap:11px;
 }
 
 .btn{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  padding:15px 23px;
+  padding:15px 21px;
   border:1px solid var(--ink);
-  font-size:11px;
-  letter-spacing:1px;
+  font-size:10px;
   text-transform:uppercase;
-  transition:.25s;
+  letter-spacing:1px;
+  transition:.25s ease;
   cursor:pointer;
-}
-
-.btn-primary{
-  background:var(--gold-dark);
-  color:white;
-  border-color:var(--gold-dark);
 }
 
 .btn:hover{
   transform:translateY(-2px);
+}
+
+.btn-primary{
+  background:var(--accent-dark);
+  border-color:var(--accent-dark);
+  color:white;
 }
 
 .hero-photo{
@@ -221,41 +205,39 @@ section{
 
 .hero-photo img{
   width:100%;
-  height:560px;
+  height:570px;
   object-fit:cover;
-  border-radius:4px;
+  object-position:center;
+  border-radius:3px;
   box-shadow:var(--shadow);
 }
 
-.photo-label{
+.photo-card{
   position:absolute;
-  left:25px;
-  bottom:25px;
+  left:-20px;
+  bottom:20px;
   background:white;
-  padding:15px 20px;
+  padding:13px 17px;
   box-shadow:var(--shadow);
-  font-family:Georgia, serif;
-}
-
-.photo-label strong{
-  display:block;
-  font-size:17px;
-}
-
-.photo-label small{
-  color:var(--muted);
-  font-family:Arial,sans-serif;
   font-size:10px;
-  letter-spacing:1px;
 }
 
-/* ---------------- STATS ---------------- */
+.photo-card strong{
+  display:block;
+  font-family:Georgia,serif;
+  font-size:13px;
+}
+
+
+/* =========================
+   STATS
+========================= */
 
 .stats{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   border-top:1px solid var(--line);
-  margin-top:65px;
+  border-bottom:1px solid var(--line);
 }
 
 .stat{
@@ -270,294 +252,371 @@ section{
 .stat strong{
   display:block;
   font-family:Georgia,serif;
-  font-size:25px;
-  margin-bottom:4px;
+  font-size:23px;
 }
 
 .stat span{
+  color:var(--muted);
   font-size:11px;
+}
+
+
+/* =========================
+   GENERAL
+========================= */
+
+section{
+  padding:100px 0;
+}
+
+.section-number{
+  color:var(--accent-dark);
+  font-size:10px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  margin-bottom:17px;
+}
+
+.section-title{
+  font-family:Georgia,serif;
+  font-weight:500;
+  font-size:clamp(42px,5vw,64px);
+  line-height:1;
+  letter-spacing:-2px;
+}
+
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:40px;
+  margin-bottom:55px;
+}
+
+.section-description{
+  max-width:460px;
   color:var(--muted);
 }
 
-/* ---------------- ABOUT ---------------- */
+
+/* =========================
+   ABOUT
+========================= */
 
 .about{
-  background:var(--white);
+  background:white;
 }
 
 .about-grid{
   display:grid;
-  grid-template-columns:430px 1fr;
-  gap:85px;
+  grid-template-columns:.78fr 1.22fr;
+  gap:70px;
   align-items:center;
 }
 
 .about-photo img{
-  height:550px;
   width:100%;
+  height:520px;
   object-fit:cover;
-  border-radius:var(--radius);
+  border-radius:10px;
 }
 
-.about-content p{
-  color:var(--muted);
-  margin:20px 0;
-}
-
-.about-points{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
-  margin-top:30px;
-}
-
-.point{
-  border:1px solid var(--line);
-  padding:17px;
-  background:var(--card);
-}
-
-.point strong{
-  display:block;
+.about-copy h2{
   font-family:Georgia,serif;
-  margin-bottom:4px;
+  font-weight:500;
+  font-size:44px;
+  line-height:1.05;
+  margin-bottom:22px;
 }
 
-/* ---------------- SERVICES ---------------- */
+.about-copy p{
+  color:var(--muted);
+  margin-bottom:16px;
+}
+
+.about-highlight{
+  margin-top:28px;
+  padding:18px 20px;
+  border-left:3px solid var(--accent);
+  background:var(--paper);
+}
+
+
+/* =========================
+   SERVICES
+========================= */
 
 .services{
   background:var(--paper);
 }
 
-.services-header{
-  text-align:center;
-  max-width:700px;
-  margin:0 auto 50px;
-}
-
 .services-grid{
   display:grid;
-  grid-template-columns:repeat(5,1fr);
-  gap:15px;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
 }
 
 .service{
   background:var(--card);
   border:1px solid var(--line);
-  padding:30px 23px;
-  min-height:355px;
-  transition:.25s;
+  padding:32px;
+  transition:.25s ease;
 }
 
 .service:hover{
-  transform:translateY(-7px);
+  transform:translateY(-4px);
   box-shadow:var(--shadow);
 }
 
 .service-number{
-  font-size:11px;
-  color:var(--gold-dark);
+  color:var(--accent-dark);
+  font-size:10px;
   letter-spacing:2px;
-  margin-bottom:22px;
 }
 
 .service h3{
   font-family:Georgia,serif;
-  font-size:24px;
-  line-height:1.15;
-  margin-bottom:18px;
+  font-weight:500;
+  font-size:28px;
+  margin:14px 0 10px;
 }
 
 .service p{
-  font-size:13px;
   color:var(--muted);
-}
-
-/* ---------------- HOW I WORK ---------------- */
-
-.how{
-  background:var(--cream);
-}
-
-.how-header{
-  text-align:center;
-  margin-bottom:60px;
-}
-
-.process{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  position:relative;
-}
-
-.process:before{
-  content:"";
-  position:absolute;
-  top:43px;
-  left:11%;
-  right:11%;
-  border-top:1px dashed var(--gold);
-}
-
-.step{
-  text-align:center;
-  position:relative;
-  padding:0 22px;
-}
-
-.step-icon{
-  width:86px;
-  height:86px;
-  margin:0 auto 22px;
-  border-radius:50%;
-  background:var(--white);
-  border:1px solid var(--line);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:24px;
-  position:relative;
-  z-index:2;
-}
-
-.step-number{
-  font-size:10px;
-  color:var(--gold-dark);
-  letter-spacing:2px;
-  margin-bottom:8px;
-}
-
-.step h3{
-  font-family:Georgia,serif;
-  font-size:25px;
-  margin-bottom:12px;
-}
-
-.step p{
-  color:var(--muted);
-  font-size:13px;
-}
-
-/* ---------------- WHY ---------------- */
-
-.why{
-  background:white;
-}
-
-.why-box{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:70px;
-  align-items:center;
-}
-
-.why-list{
-  margin-top:30px;
-}
-
-.why-item{
-  display:flex;
-  gap:20px;
-  padding:20px 0;
-  border-bottom:1px solid var(--line);
-}
-
-.why-item span{
-  color:var(--gold-dark);
-  font-family:Georgia,serif;
-  font-size:20px;
-}
-
-.why-item strong{
-  display:block;
-  margin-bottom:3px;
-}
-
-.why-item p{
-  color:var(--muted);
-  font-size:13px;
-}
-
-.quote{
-  background:var(--cream);
-  padding:55px;
-  border-radius:var(--radius);
-}
-
-.quote-mark{
-  font-family:Georgia,serif;
-  font-size:70px;
-  color:var(--gold);
-  line-height:.5;
-  margin-bottom:25px;
-}
-
-.quote p{
-  font-family:Georgia,serif;
-  font-size:30px;
-  line-height:1.25;
-}
-
-/* ---------------- CONTACT ---------------- */
-
-.contact{
-  background:#e9dfd1;
-  padding:110px 0;
-}
-
-.contact-box{
-  background:var(--white);
-  border:1px solid var(--line);
-  padding:55px;
-  display:grid;
-  grid-template-columns:.9fr 1.1fr;
-  gap:60px;
-  box-shadow:var(--shadow);
-  border-radius:3px;
-}
-
-.contact-copy h2{
-  font-family:Georgia,serif;
-  font-size:clamp(42px,5vw,62px);
-  line-height:1.02;
-  font-weight:500;
-  margin-bottom:22px;
-}
-
-.contact-copy p{
-  color:var(--muted);
-  margin-bottom:30px;
-}
-
-.email-card{
-  background:var(--cream);
-  padding:20px;
-}
-
-.email-card small{
-  display:block;
-  color:var(--muted);
-  font-size:10px;
-  text-transform:uppercase;
-  letter-spacing:1px;
-  margin-bottom:4px;
-}
-
-.email-card a{
   font-size:14px;
 }
 
-/* FORM */
 
-.form{
-  display:grid;
-  gap:15px;
+/* =========================
+   EXPERIENCE
+========================= */
+
+.experience{
+  background:white;
 }
 
-.form-row{
+.experience-list{
+  border-top:1px solid var(--line);
+}
+
+.experience-item{
+  display:grid;
+  grid-template-columns:180px 1fr;
+  gap:50px;
+  padding:34px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.experience-date{
+  color:var(--accent-dark);
+  font-size:10px;
+  letter-spacing:1.5px;
+}
+
+.experience-item h3{
+  font-family:Georgia,serif;
+  font-weight:500;
+  font-size:30px;
+}
+
+.experience-item h4{
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  margin:5px 0 10px;
+}
+
+.experience-item p{
+  color:var(--muted);
+}
+
+
+/* =========================
+   HOW I WORK
+========================= */
+
+.how{
+  background:var(--paper);
+}
+
+.work-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:25px;
+}
+
+.work-card{
+  border-top:1px solid var(--ink);
+  padding-top:20px;
+}
+
+.work-number{
+  color:var(--accent-dark);
+  font-size:10px;
+  letter-spacing:2px;
+}
+
+.work-card h3{
+  font-family:Georgia,serif;
+  font-weight:500;
+  font-size:28px;
+  margin:23px 0 13px;
+}
+
+.work-card p{
+  color:var(--muted);
+  font-size:14px;
+}
+
+
+/* =========================
+   PORTFOLIO / SAMPLE DESIGNS
+========================= */
+
+.portfolio{
+  background:white;
+}
+
+.portfolio-intro{
+  display:flex;
+  justify-content:space-between;
+  gap:40px;
+  align-items:end;
+  margin-bottom:45px;
+}
+
+.portfolio-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.portfolio-item{
+  position:relative;
+  overflow:hidden;
+  background:var(--paper);
+  border:1px solid var(--line);
+}
+
+.portfolio-item img{
+  width:100%;
+  height:390px;
+  object-fit:cover;
+  transition:.45s ease;
+}
+
+.portfolio-item:hover img{
+  transform:scale(1.04);
+}
+
+.portfolio-label{
+  position:absolute;
+  left:14px;
+  bottom:14px;
+  background:rgba(255,255,255,.94);
+  padding:8px 12px;
+  font-size:10px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+
+
+/* =========================
+   TOOLS
+========================= */
+
+.tools{
+  background:var(--paper);
+}
+
+.tools-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.tool{
+  padding:12px 17px;
+  border:1px solid var(--line);
+  background:var(--card);
+  border-radius:50px;
+  font-size:11px;
+}
+
+
+/* =========================
+   CV
+========================= */
+
+.cv-section{
+  background:white;
+  text-align:center;
+}
+
+.cv-inner{
+  max-width:760px;
+  margin:auto;
+}
+
+.cv-inner p{
+  max-width:600px;
+  margin:20px auto 28px;
+  color:var(--muted);
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+  background:var(--cream);
+}
+
+.contact-intro{
+  max-width:850px;
+  margin:0 auto 48px;
+  text-align:center;
+}
+
+.contact-intro h2{
+  font-family:Georgia,serif;
+  font-weight:500;
+  font-size:clamp(45px,6vw,72px);
+  line-height:1.05;
+  letter-spacing:-3px;
+  margin-bottom:22px;
+}
+
+.contact-intro p{
+  color:var(--muted);
+}
+
+.contact-details{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:30px;
+  margin-top:22px;
+  font-size:12px;
+}
+
+.contact-details a:hover{
+  color:var(--accent-dark);
+}
+
+.form-box{
+  max-width:900px;
+  margin:auto;
+  background:var(--card);
+  border:1px solid var(--line);
+  padding:35px;
+}
+
+.form-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:15px;
+  gap:23px;
 }
 
 .field{
@@ -566,97 +625,82 @@ section{
   gap:7px;
 }
 
+.field.full{
+  grid-column:1/-1;
+}
+
 .field label{
   font-size:11px;
-  letter-spacing:.5px;
 }
 
 .field input,
 .field select,
 .field textarea{
-  width:100%;
+  border:1px solid #cfc5b7;
+  background:white;
   padding:15px;
-  border:1px solid #cfc4b5;
-  background:#fff;
-  font:inherit;
-  font-size:13px;
   outline:none;
-  transition:.2s;
+  color:var(--ink);
 }
 
 .field input:focus,
 .field select:focus,
 .field textarea:focus{
-  border-color:var(--gold-dark);
+  border-color:var(--accent-dark);
 }
 
 .field textarea{
-  min-height:135px;
+  min-height:145px;
   resize:vertical;
 }
 
-.submit{
-  border:0;
-  background:var(--ink);
-  color:white;
-  padding:16px 22px;
-  cursor:pointer;
-  font-size:11px;
-  letter-spacing:1px;
-  text-transform:uppercase;
-  transition:.2s;
+.form-submit{
+  margin-top:24px;
 }
 
-.submit:hover{
-  background:var(--gold-dark);
-}
-
-/* ---------------- FOOTER ---------------- */
-
-footer{
-  padding:35px 0;
-  background:var(--paper);
-  border-top:1px solid var(--line);
-}
-
-.footer-inner{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-
-footer p{
+.form-note{
+  margin-top:20px;
+  text-align:center;
   color:var(--muted);
   font-size:11px;
 }
 
-.footer-links{
-  display:flex;
-  gap:20px;
-  font-size:11px;
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  background:var(--paper);
+  border-top:1px solid var(--line);
+  padding:32px 0;
 }
 
-/* ---------------- MOBILE ---------------- */
+.footer-inner{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+}
 
-@media(max-width:950px){
+footer p{
+  color:var(--muted);
+  font-size:10px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:900px){
 
   .nav-links{
     display:none;
   }
 
   .hero-grid,
-  .about-grid,
-  .why-box,
-  .contact-box{
+  .about-grid{
     grid-template-columns:1fr;
-  }
-
-  .hero{
-    padding-top:55px;
-  }
-
-  .hero h1{
-    font-size:55px;
   }
 
   .hero-photo img{
@@ -664,7 +708,7 @@ footer p{
   }
 
   .stats{
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:repeat(2,1fr);
   }
 
   .stat:nth-child(2){
@@ -672,40 +716,31 @@ footer p{
   }
 
   .services-grid{
+    grid-template-columns:1fr;
+  }
+
+  .work-grid{
     grid-template-columns:repeat(2,1fr);
   }
 
-  .process{
-    grid-template-columns:1fr 1fr;
-    gap:45px 15px;
+  .portfolio-grid{
+    grid-template-columns:repeat(2,1fr);
   }
 
-  .process:before{
-    display:none;
-  }
 }
 
 @media(max-width:600px){
 
   .container{
-    width:min(100% - 30px, var(--max));
+    width:calc(100% - 30px);
   }
 
   section{
-    padding:75px 0;
+    padding:70px 0;
   }
 
-  .nav-inner{
-    height:68px;
-  }
-
-  .nav-cta{
-    padding:10px 13px;
-    font-size:9px;
-  }
-
-  .brand{
-    font-size:23px;
+  .hero{
+    padding-top:55px;
   }
 
   .hero h1{
@@ -714,663 +749,1136 @@ footer p{
   }
 
   .hero-photo img{
-    height:430px;
+    height:440px;
   }
 
   .stats{
     grid-template-columns:1fr 1fr;
   }
 
-  .stat{
-    border-bottom:1px solid var(--line);
+  .section-head,
+  .portfolio-intro{
+    display:block;
   }
 
-  .about-grid{
-    gap:35px;
+  .section-description{
+    margin-top:20px;
   }
 
   .about-photo img{
     height:420px;
   }
 
-  .about-points{
+  .experience-item{
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+
+  .work-grid,
+  .portfolio-grid{
     grid-template-columns:1fr;
   }
 
-  .services-grid{
+  .portfolio-item img{
+    height:380px;
+  }
+
+  .form-grid{
     grid-template-columns:1fr;
   }
 
-  .service{
-    min-height:auto;
+  .field.full{
+    grid-column:auto;
   }
 
-  .process{
-    grid-template-columns:1fr;
-  }
-
-  .quote{
-    padding:35px;
-  }
-
-  .quote p{
-    font-size:25px;
-  }
-
-  .contact{
-    padding:70px 0;
-  }
-
-  .contact-box{
-    padding:28px 20px;
-    gap:40px;
-  }
-
-  .contact-copy h2{
-    font-size:43px;
-  }
-
-  .form-row{
-    grid-template-columns:1fr;
+  .form-box{
+    padding:22px;
   }
 
   .footer-inner{
     flex-direction:column;
-    gap:15px;
-    text-align:center;
   }
+
 }
+
 </style>
 </head>
 
+
 <body>
 
-<!-- ================= NAV ================= -->
+
+<!-- =========================
+     NAVIGATION
+========================= -->
 
 <nav>
-  <div class="container nav-inner">
 
-    <a href="#home" class="brand">
-      Hannah <span>Grace</span>
-      <small>VIRTUAL OPERATIONS PARTNER</small>
-    </a>
+<div class="container nav-inner">
 
-    <div class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#how">How I Work</a>
-      <a href="#work">Portfolio</a>
-      <a href="#contact">Contact</a>
-    </div>
+<a href="#home" class="brand">
+  Hannah <span>Grace</span>
+  <small>VIRTUAL OPERATIONS &amp; EXECUTIVE SUPPORT</small>
+</a>
 
-    <a href="#contact" class="nav-cta">
-      Let's Work Together
-    </a>
+<div class="nav-links">
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#experience">Experience</a>
+  <a href="#how">How I Work</a>
+  <a href="#portfolio">Portfolio</a>
+  <a href="#contact">Contact</a>
+</div>
 
-  </div>
+<a href="#contact" class="nav-cta">
+  Let's Work Together
+</a>
+
+</div>
+
 </nav>
 
 
-<!-- ================= HERO ================= -->
-
-<main id="home">
-
-<section class="hero">
-
-  <div class="container">
-
-    <div class="hero-grid">
-
-      <div>
-
-        <div class="kicker">
-          Virtual Operations & Executive Support
-        </div>
-
-        <h1>
-          Helping leaders stay
-          <span>organized,</span>
-          efficient, and focused.
-        </h1>
-
-        <p class="hero-text">
-          I partner with founders, leaders, and growing teams to streamline
-          operations, manage projects, support clients, and create systems
-          that make work easier — so you can focus on growth.
-        </p>
-
-        <div class="buttons">
-
-          <a href="#contact" class="btn btn-primary">
-            Let's Work Together →
-          </a>
-
-          <a href="#contact" class="btn">
-            Request My CV ↓
-          </a>
-
-        </div>
-
-      </div>
+<main>
 
 
-      <div class="hero-photo">
+<!-- =========================
+     HERO
+========================= -->
 
-        <!-- HERO PHOTO -->
-        <img src="hannah-desk.png" alt="Hannah Grace Agcaoili">
+<section id="home" class="hero">
 
-        <div class="photo-label">
-          <strong>Hannah Agcaoili</strong>
-          <small>Virtual Operations Partner</small>
-        </div>
+<div class="container hero-grid">
 
-      </div>
+<div>
 
-    </div>
+<div class="eyebrow">
+  Virtual Operations &amp; Executive Support
+</div>
+
+<h1>
+  Helping leaders stay
+  <span>organized,</span>
+  efficient, and focused
+  on what truly matters.
+</h1>
+
+<p class="hero-description">
+  I partner with founders, leaders, and growing teams to streamline
+  operations, support clients, manage details, and create practical
+  systems that make work easier — so you can focus on growth.
+</p>
+
+<div class="buttons">
+
+<a href="#contact" class="btn btn-primary">
+  Let's Work Together →
+</a>
+
+<a href="#cv" class="btn">
+  Request My CV ↓
+</a>
+
+</div>
+
+</div>
 
 
-    <div class="stats">
+<div class="hero-photo">
 
-      <div class="stat">
-        <strong>4+ Years</strong>
-        <span>Professional experience</span>
-      </div>
+<!-- EXISTING PHOTO — NOT CHANGED -->
 
-      <div class="stat">
-        <strong>Remote</strong>
-        <span>Worldwide support</span>
-      </div>
+<img
+  src="assets/hannah-portrait.png"
+  alt="Hannah Agcaoili"
+>
 
-      <div class="stat">
-        <strong>Operations</strong>
-        <span>Detail-focused support</span>
-      </div>
+<div class="photo-card">
+  <strong>Hannah Agcaoili</strong>
+  Virtual Operations &amp; Executive Support
+</div>
 
-      <div class="stat">
-        <strong>Flexible</strong>
-        <span>Time-zone friendly</span>
-      </div>
+</div>
 
-    </div>
-
-  </div>
+</div>
 
 </section>
 
 
-<!-- ================= ABOUT ================= -->
+<!-- =========================
+     STATS
+========================= -->
 
-<section class="about" id="about">
+<section style="padding:0 0 75px;">
 
-  <div class="container about-grid">
+<div class="container stats">
 
-    <div class="about-photo">
+<div class="stat">
+  <strong>5+ Years</strong>
+  <span>Professional experience</span>
+</div>
 
-      <!-- ABOUT PHOTO -->
-      <img src="hannah-portrait.png" alt="Hannah Grace Agcaoili">
+<div class="stat">
+  <strong>Remote</strong>
+  <span>Worldwide support</span>
+</div>
 
-    </div>
+<div class="stat">
+  <strong>Operations</strong>
+  <span>Detail-focused support</span>
+</div>
 
+<div class="stat">
+  <strong>Flexible</strong>
+  <span>Time-zone friendly</span>
+</div>
 
-    <div class="about-content">
-
-      <div class="kicker">01 / About</div>
-
-      <h2 class="section-title">
-        More than support.
-        <br>
-        A reliable extra pair of hands.
-      </h2>
-
-      <p>
-        I help busy professionals stay organized, prepared, and on top
-        of the details that keep their businesses moving.
-      </p>
-
-      <p>
-        My approach is simple: understand what matters, organize the moving
-        pieces, take ownership of the details, and communicate clearly along
-        the way.
-      </p>
-
-      <div class="about-points">
-
-        <div class="point">
-          <strong>Detail-focused</strong>
-          <span>I notice the small things before they become problems.</span>
-        </div>
-
-        <div class="point">
-          <strong>Reliable</strong>
-          <span>You can trust me to keep things moving.</span>
-        </div>
-
-        <div class="point">
-          <strong>Organized</strong>
-          <span>Clear systems, trackers, and workflows.</span>
-        </div>
-
-        <div class="point">
-          <strong>Proactive</strong>
-          <span>I look ahead instead of waiting for problems.</span>
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
+</div>
 
 </section>
 
 
-<!-- ================= SERVICES ================= -->
+<!-- =========================
+     ABOUT
+========================= -->
 
-<section class="services" id="services">
+<section id="about" class="about">
 
-  <div class="container">
+<div class="container about-grid">
 
-    <div class="services-header">
+<div class="about-photo">
 
-      <div class="kicker">02 / Services</div>
+<!-- EXISTING PHOTO — NOT CHANGED -->
 
-      <h2 class="section-title">
-        How I can support you.
-      </h2>
+<img
+  src="assets/hannah-desk.png"
+  alt="Hannah working at her desk"
+>
 
-      <p class="section-intro" style="margin-left:auto;margin-right:auto;">
-        From day-to-day support to bigger-picture organization,
-        I help keep your business running smoothly.
-      </p>
-
-    </div>
+</div>
 
 
-    <div class="services-grid">
+<div class="about-copy">
 
-      <article class="service">
+<div class="section-number">
+  01 / About
+</div>
 
-        <div class="service-number">01</div>
+<h2>
+  A reliable extra pair of hands for your business.
+</h2>
 
-        <h3>Executive Assistance</h3>
+<p>
+  I’m Hannah Agcaoili, a detail-oriented Virtual Assistant
+  with experience supporting customers, operations, administrative
+  workflows, research, documentation, and digital business needs.
+</p>
 
-        <p>
-          Calendar and task coordination, meeting follow-ups, reminders,
-          inbox support, documentation, research, and keeping priorities moving.
-        </p>
+<p>
+  I enjoy taking moving pieces, information, and recurring tasks
+  and turning them into organized, practical workflows.
+</p>
 
-      </article>
+<p>
+  My approach is simple: understand what needs to happen,
+  organize the details, follow through, and communicate clearly.
+</p>
 
+<div class="about-highlight">
 
-      <article class="service">
+<strong>
+  My goal isn't simply to complete tasks —
+  it's to make your day-to-day work feel lighter.
+</strong>
 
-        <div class="service-number">02</div>
+</div>
 
-        <h3>Compliance & Documentation</h3>
+</div>
 
-        <p>
-          Document review, filing support, deadline tracking, compliance
-          research, records management, and detail-focused administrative workflows.
-        </p>
-
-      </article>
-
-
-      <article class="service">
-
-        <div class="service-number">03</div>
-
-        <h3>Research & Data</h3>
-
-        <p>
-          Business research, prospect research, data validation, information
-          gathering, reporting, and turning research into organized, useful outputs.
-        </p>
-
-      </article>
-
-
-      <article class="service">
-
-        <div class="service-number">04</div>
-
-        <h3>Process Improvement</h3>
-
-        <p>
-          Creating practical SOPs, improving trackers, organizing workflows,
-          identifying gaps, and making recurring work easier to manage.
-        </p>
-
-      </article>
-
-
-      <article class="service">
-
-        <div class="service-number">05</div>
-
-        <h3>Digital & Business Support</h3>
-
-        <p>
-          Support with online tools, data organization, business systems,
-          basic content coordination, and other behind-the-scenes tasks
-          that keep work moving.
-        </p>
-
-      </article>
-
-    </div>
-
-  </div>
+</div>
 
 </section>
 
 
-<!-- ================= HOW I WORK ================= -->
+<!-- =========================
+     SERVICES
+========================= -->
 
-<section class="how" id="how">
+<section id="services" class="services">
 
-  <div class="container">
+<div class="container">
 
-    <div class="how-header">
+<div class="section-head">
 
-      <div class="kicker">03 / How I Work</div>
+<div>
 
-      <h2 class="section-title">
-        A simple process.
-      </h2>
+<div class="section-number">
+  02 / Services
+</div>
 
-      <p class="section-intro" style="margin-left:auto;margin-right:auto;">
-        Clear communication, thoughtful organization, and dependable follow-through.
-      </p>
+<h2 class="section-title">
+  Support that keeps<br>
+  work moving.
+</h2>
 
-    </div>
+</div>
 
+<p class="section-description">
+  Flexible support across administration, operations, research,
+  documentation, customer support, and digital business tasks.
+</p>
 
-    <div class="process">
-
-      <div class="step">
-
-        <div class="step-icon">☷</div>
-
-        <div class="step-number">01</div>
-
-        <h3>Understand</h3>
-
-        <p>
-          I learn your priorities, systems, expectations,
-          and preferred way of working.
-        </p>
-
-      </div>
+</div>
 
 
-      <div class="step">
-
-        <div class="step-icon">□</div>
-
-        <div class="step-number">02</div>
-
-        <h3>Organize</h3>
-
-        <p>
-          I turn information and moving pieces into clear
-          tasks, trackers, and workflows.
-        </p>
-
-      </div>
+<div class="services-grid">
 
 
-      <div class="step">
+<div class="service">
 
-        <div class="step-icon">◎</div>
+<div class="service-number">01</div>
 
-        <div class="step-number">03</div>
+<h3>
+  Executive Assistance
+</h3>
 
-        <h3>Execute</h3>
+<p>
+  Calendar and task coordination, meeting follow-ups, reminders,
+  inbox support, documentation, research, and keeping priorities moving.
+</p>
 
-        <p>
-          I take ownership of the details and keep work
-          moving with minimal hand-holding.
-        </p>
-
-      </div>
+</div>
 
 
-      <div class="step">
+<div class="service">
 
-        <div class="step-icon">♡</div>
+<div class="service-number">02</div>
 
-        <div class="step-number">04</div>
+<h3>
+  Compliance &amp; Documentation
+</h3>
 
-        <h3>Communicate</h3>
+<p>
+  Document review, filing support, deadline tracking, compliance
+  research, records management, and detail-focused administrative workflows.
+</p>
 
-        <p>
-          I keep you updated, flag issues early, and follow
-          through on commitments.
-        </p>
+</div>
 
-      </div>
 
-    </div>
+<div class="service">
 
-  </div>
+<div class="service-number">03</div>
+
+<h3>
+  Research &amp; Data
+</h3>
+
+<p>
+  Business research, prospect research, data validation,
+  information gathering, reporting, and turning research into
+  organized, useful outputs.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-number">04</div>
+
+<h3>
+  Process Improvement
+</h3>
+
+<p>
+  Creating practical SOPs, improving trackers, organizing workflows,
+  identifying gaps, and making recurring work easier to manage.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-number">05</div>
+
+<h3>
+  Digital &amp; Business Support
+</h3>
+
+<p>
+  Support with online tools, data organization, business systems,
+  basic content coordination, and other behind-the-scenes tasks
+  that keep work moving.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-number">06</div>
+
+<h3>
+  Customer Support
+</h3>
+
+<p>
+  Customer communication, issue resolution, follow-ups,
+  documentation, and professional client-facing support.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-number">07</div>
+
+<h3>
+  Operations Support
+</h3>
+
+<p>
+  Administrative coordination, task organization, information
+  management, workflow support, and keeping recurring activities on track.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-number">08</div>
+
+<h3>
+  Social Media Content Support &amp; Visual Content Creation
+</h3>
+
+<p>
+  Content coordination, digital asset organization, 
+  social media support, graphic design and 
+  visual content creation, and behind-the-scenes assistance 
+  for your online presence.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- ================= WHY ME ================= -->
+<!-- =========================
+     EXPERIENCE
+========================= -->
 
-<section class="why" id="work">
+<section id="experience" class="experience">
 
-  <div class="container why-box">
+<div class="container">
 
-    <div>
+<div class="section-head">
 
-      <div class="kicker">04 / Working Together</div>
+<div>
 
-      <h2 class="section-title">
-        You focus on the big picture.
-        <br>
-        I'll help handle the details.
-      </h2>
+<div class="section-number">
+  03 / Experience
+</div>
 
-      <div class="why-list">
+<h2 class="section-title">
+  Experience that<br>
+  shaped how I work.
+</h2>
 
-        <div class="why-item">
-          <span>01</span>
-          <div>
-            <strong>Less mental clutter</strong>
-            <p>Keep tasks, information, and priorities organized.</p>
-          </div>
-        </div>
+</div>
 
-        <div class="why-item">
-          <span>02</span>
-          <div>
-            <strong>More consistency</strong>
-            <p>Build repeatable systems instead of reinventing the wheel.</p>
-          </div>
-        </div>
+<p class="section-description">
+  A background built around customer support, operations,
+  organization, communication, and detail-focused work.
+</p>
 
-        <div class="why-item">
-          <span>03</span>
-          <div>
-            <strong>Better follow-through</strong>
-            <p>Important details don't get lost in the shuffle.</p>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
+</div>
 
 
-    <div class="quote">
+<div class="experience-list">
 
-      <div class="quote-mark">“</div>
 
-      <p>
-        Good support isn't just about getting things done.
-        It's about making work feel lighter.
-      </p>
+<!--
+=========================================================
+KEEP YOUR EXISTING EXPERIENCE ENTRIES HERE.
 
-    </div>
+DO NOT DELETE YOUR EXISTING EXPERIENCE CONTENT.
+Paste the experience entries from your current index.html
+inside this area if they are not already here.
+=========================================================
+-->
 
-  </div>
+
+<div class="experience-item">
+
+<div class="experience-date">
+  CUSTOMER SUPPORT
+</div>
+
+<div>
+
+<h3>
+  Customer Support
+</h3>
+
+<h4>
+  Professional Experience
+</h4>
+
+<p>
+  Customer-focused support, communication, follow-ups,
+  issue resolution, and helping clients receive clear
+  and professional assistance.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="experience-item">
+
+<div class="experience-date">
+  OPERATIONS
+</div>
+
+<div>
+
+<h3>
+  Operations &amp; Administrative Support
+</h3>
+
+<h4>
+  Professional Experience
+</h4>
+
+<p>
+  Organizing information, coordinating tasks, supporting
+  workflows, managing documentation, and helping teams
+  stay on top of priorities.
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- ================= CONTACT ================= -->
+<!-- =========================
+     HOW I WORK
+========================= -->
 
-<section class="contact" id="contact">
+<section id="how" class="how">
 
-  <div class="container">
+<div class="container">
 
-    <div class="contact-box">
+<div class="section-head">
 
-      <div class="contact-copy">
+<div>
 
-        <div class="kicker">05 / Let's Work Together</div>
+<div class="section-number">
+  04 / How I Work
+</div>
 
-        <h2>
-          Tell me what you need help keeping on track.
-        </h2>
+<h2 class="section-title">
+  Thoughtful support.<br>
+  Clear process.
+</h2>
 
-        <p>
-          Share a little about your business and what you'd like support with.
-          I'll get back to you by email.
-        </p>
+</div>
 
-        <div class="email-card">
+<p class="section-description">
+  I don't believe good support is simply about finishing a checklist.
+  I focus on understanding the bigger picture and creating a smoother
+  way of working.
+</p>
 
-          <small>Prefer email?</small>
-
-          <!-- CHANGE THIS EMAIL IF NEEDED -->
-          <a href="mailto:YOUR-EMAIL@example.com">
-            YOUR-EMAIL@example.com
-          </a>
-
-        </div>
-
-      </div>
+</div>
 
 
-      <form
-        class="form"
-        action="mailto:YOUR-EMAIL@example.com"
-        method="post"
-        enctype="text/plain"
-      >
-
-        <div class="form-row">
-
-          <div class="field">
-            <label>Your name *</label>
-            <input
-              type="text"
-              name="Name"
-              placeholder="Your name"
-              required
-            >
-          </div>
-
-          <div class="field">
-            <label>Email *</label>
-            <input
-              type="email"
-              name="Email"
-              placeholder="you@example.com"
-              required
-            >
-          </div>
-
-        </div>
+<div class="work-grid">
 
 
-        <div class="field">
+<div class="work-card">
 
-          <label>Company / Organization</label>
+<div class="work-number">
+  01
+</div>
 
-          <input
-            type="text"
-            name="Company"
-            placeholder="Company or organization"
-          >
+<h3>
+  Understand
+</h3>
 
-        </div>
+<p>
+  I learn your priorities, systems, expectations, communication style,
+  and the way you prefer things to work.
+</p>
 
-
-        <div class="field">
-
-          <label>What can I help you with? *</label>
-
-          <select name="Support" required>
-
-            <option value="">Select one</option>
-
-            <option>Executive Assistance</option>
-
-            <option>Compliance & Documentation</option>
-
-            <option>Research & Data</option>
-
-            <option>Process Improvement</option>
-
-            <option>Digital & Business Support</option>
-
-            <option>Not sure yet</option>
-
-          </select>
-
-        </div>
+</div>
 
 
-        <div class="field">
+<div class="work-card">
 
-          <label>Tell me a little about what you need *</label>
+<div class="work-number">
+  02
+</div>
 
-          <textarea
-            name="Message"
-            placeholder="What are you currently working on? What would you like help with?"
-            required
-          ></textarea>
+<h3>
+  Organize
+</h3>
 
-        </div>
+<p>
+  I turn information and moving pieces into clear tasks,
+  trackers, documentation, and workable systems.
+</p>
+
+</div>
 
 
-        <button class="submit" type="submit">
-          Send Inquiry →
-        </button>
+<div class="work-card">
 
-      </form>
+<div class="work-number">
+  03
+</div>
 
-    </div>
+<h3>
+  Execute
+</h3>
 
-  </div>
+<p>
+  I take ownership of the details, follow through on priorities,
+  and keep work moving with minimal hand-holding.
+</p>
+
+</div>
+
+
+<div class="work-card">
+
+<div class="work-number">
+  04
+</div>
+
+<h3>
+  Communicate
+</h3>
+
+<p>
+  I keep you updated, flag issues early, ask when clarification
+  is needed, and follow through on commitments.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
 
 </section>
+
+
+<!-- =========================
+     PORTFOLIO
+     ALL SAMPLE DESIGNS INCLUDED
+========================= -->
+
+<section id="portfolio" class="portfolio">
+
+<div class="container">
+
+
+<div class="portfolio-intro">
+
+<div>
+
+<div class="section-number">
+  05 / Selected Work
+</div>
+
+<h2 class="section-title">
+  A glimpse of<br>
+  what I create.
+</h2>
+
+</div>
+
+
+<p class="section-description">
+  A selection of sample designs and creative work.
+  These can be expanded anytime by adding more files
+  to your <strong>assets</strong> folder.
+</p>
+
+</div>
+
+
+<div class="portfolio-grid">
+
+
+<!-- SAMPLE 01 -->
+
+<div class="portfolio-item">
+
+<img
+  src="assets/work-8.png"
+  alt="Hannah portfolio sample design"
+>
+
+<div class="portfolio-label">
+  Sample Work 01
+</div>
+
+</div>
+
+
+<!-- SAMPLE 02 -->
+
+<div class="portfolio-item">
+
+<img
+  src="assets/work-9.png"
+  alt="Hannah portfolio sample design"
+>
+
+<div class="portfolio-label">
+  Sample Work 02
+</div>
+
+</div>
+
+
+<!-- SAMPLE 03 -->
+
+<div class="portfolio-item">
+
+<img
+  src="assets/work-10.png"
+  alt="Hannah portfolio sample design"
+>
+
+<div class="portfolio-label">
+  Sample Work 03
+</div>
+
+</div>
+
+
+<!-- SAMPLE 04 -->
+
+<div class="portfolio-item">
+
+<img
+  src="assets/work-11.png"
+  alt="Hannah portfolio sample design"
+>
+
+<div class="portfolio-label">
+  Sample Work 04
+</div>
+
+</div>
+
+
+<!-- SAMPLE 05 -->
+
+<div class="portfolio-item">
+
+<img
+  src="assets/work-12.png"
+  alt="Hannah portfolio sample design"
+>
+
+<div class="portfolio-label">
+  Sample Work 05
+</div>
+
+</div>
+
+
+<!-- SAMPLE 06 -->
+
+<div class="portfolio-item">
+
+<img
+  src="assets/work-13.png"
+  alt="Hannah portfolio sample design"
+>
+
+<div class="portfolio-label">
+  Sample Work 06
+</div>
+
+</div>
+
+
+<!-- SAMPLE 07 -->
+
+<div class="portfolio-item">
+
+<img
+  src="assets/work-14.png"
+  alt="Hannah portfolio sample design"
+>
+
+<div class="portfolio-label">
+  Sample Work 07
+</div>
+
+</div>
+
+
+<!-- SAMPLE 08 -->
+
+<div class="portfolio-item">
+
+<img
+  src="assets/work-15.png"
+  alt="Hannah portfolio sample design"
+>
+
+<div class="portfolio-label">
+  Sample Work 08
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     TOOLS
+========================= -->
+
+<section id="tools" class="tools">
+
+<div class="container">
+
+<div class="section-head">
+
+<div>
+
+<div class="section-number">
+  06 / Tools
+</div>
+
+<h2 class="section-title">
+  Comfortable with<br>
+  digital workspaces.
+</h2>
+
+</div>
+
+<p class="section-description">
+  Comfortable learning new platforms and adapting to the tools
+  your business already uses.
+</p>
+
+</div>
+
+
+<div class="tools-list">
+
+<div class="tool">Canva</div>
+<div class="tool">Google Workspace</div>
+<div class="tool">Microsoft Office</div>
+<div class="tool">Google Sheets</div>
+<div class="tool">Documentation</div>
+<div class="tool">Data Organization</div>
+<div class="tool">Customer Support Platforms</div>
+<div class="tool">Social Media Tools</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CV
+========================= -->
+
+<section id="cv" class="cv-section">
+
+<div class="container cv-inner">
+
+<div class="section-number">
+  07 / Request My CV
+</div>
+
+<h2 class="section-title">
+  Let's talk about<br>
+  what I can bring to your team.
+</h2>
+
+<p>
+  Interested in learning more about my professional background,
+  experience, and skills? Request my CV and I'll be happy to
+  share more details.
+</p>
+
+<a
+  href="mailto:va.hannahagcaoili@gmail.com?subject=Request%20for%20Hannah%20Grace%20Agcaoili%20CV"
+  class="btn btn-primary"
+>
+  Request My CV →
+</a>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact" class="contact">
+
+<div class="container">
+
+
+<div class="contact-intro">
+
+<div class="section-number">
+  08 / Let's Work Together
+</div>
+
+<h2>
+  Tell me what you need help
+  keeping on track.
+</h2>
+
+<p>
+  No complicated application process. Just tell me a little
+  about your business and what you need help with.
+</p>
+
+
+<div class="contact-details">
+
+<a href="mailto:va.hannahagcaoili@gmail.com">
+  ✉ va.hannahagcaoili@gmail.com
+</a>
+
+<a href="tel:+639280816470">
+  ☎ +63 928 081 6470
+</a>
+
+</div>
+
+</div>
+
+
+<div class="form-box">
+
+
+<form
+  action="mailto:va.hannahagcaoili@gmail.com"
+  method="post"
+  enctype="text/plain"
+>
+
+
+<div class="form-grid">
+
+
+<div class="field">
+
+<label for="name">
+  Your name *
+</label>
+
+<input
+  id="name"
+  name="Name"
+  type="text"
+  placeholder="Your name"
+  required
+>
+
+</div>
+
+
+<div class="field">
+
+<label for="email">
+  Email *
+</label>
+
+<input
+  id="email"
+  name="Email"
+  type="email"
+  placeholder="you@company.com"
+  required
+>
+
+</div>
+
+
+<div class="field">
+
+<label for="company">
+  Company / Business
+</label>
+
+<input
+  id="company"
+  name="Company"
+  type="text"
+  placeholder="Your company"
+>
+
+</div>
+
+
+<div class="field">
+
+<label for="help">
+  What can I help with? *
+</label>
+
+<select
+  id="help"
+  name="Support Needed"
+  required
+>
+
+<option value="">
+  Select one
+</option>
+
+<option>
+  Executive Assistance
+</option>
+
+<option>
+  Customer Support
+</option>
+
+<option>
+  Operations Support
+</option>
+
+<option>
+  Compliance & Documentation
+</option>
+
+<option>
+  Research & Data
+</option>
+
+<option>
+  Process Improvement
+</option>
+
+<option>
+  Digital & Business Support
+</option>
+
+<option>
+  Something else
+</option>
+
+</select>
+
+</div>
+
+
+<div class="field full">
+
+<label for="message">
+  Tell me a little about what you need *
+</label>
+
+<textarea
+  id="message"
+  name="Message"
+  placeholder="What would you like help with? You can keep it short — a few sentences is enough."
+  required
+></textarea>
+
+</div>
+
+
+</div>
+
+
+<div class="form-submit">
+
+<button
+  type="submit"
+  class="btn btn-primary"
+>
+  Send Inquiry →
+</button>
+
+</div>
+
+
+</form>
+
+
+<div class="form-note">
+
+I'll review your message and get back to you by email.
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
 
 </main>
 
 
-<!-- ================= FOOTER ================= -->
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
-  <div class="container footer-inner">
+<div class="container footer-inner">
 
-    <p>
-      © 2026 Hannah Grace Agcaoili. All rights reserved.
-    </p>
+<p>
+  © 2026 Hannah Grace Agcaoili
+</p>
 
-    <div class="footer-links">
-      <a href="#home">Back to top ↑</a>
-      <a href="#contact">Let's connect</a>
-    </div>
+<p>
+  Virtual Operations &amp; Executive Support ·
+  <a href="mailto:va.hannahagcaoili@gmail.com">
+    va.hannahagcaoili@gmail.com
+  </a>
+</p>
 
-  </div>
+</div>
 
 </footer>
 
